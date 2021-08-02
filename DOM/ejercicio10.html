@@ -1,0 +1,51 @@
+<HTML>
+
+<HEAD>
+    <TITLE> Prueba de JavaScript.</TITLE>
+    <SCRIPT LANGUAGE="JavaScript">
+        //<!--
+        function verificar(str, min, max) {
+            var i;
+            var ch;
+            if (str == "") {
+                Error(min, max);
+                return false
+            }
+            for (i = 0; i < str.length; i++) {
+                ch = str.substring(i, i + 1);
+                if (ch < "0" || ch > "9") {
+                    Error(min, max);
+                    return false;
+                }
+            }
+            i = parseInt(str);
+            if (I < min || I > max) {
+                Error(min, max);
+                return false;
+            }
+            return true;
+        }
+        function gracias() {
+            alert("Gracias por su visita")
+        }
+        function Error(min, max) {
+            var str;
+            str = "Introduce un numero entre " + min + " y " + max;
+            alert(str)
+        }
+        //-->
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <BR>
+    <FORM align=center name="f1" >
+        <p>Introduce un número:
+            <input type="text" name="texto" onChange="if(!verificar(this.value,1,100)){
+this.select();}else {gracias()} "> </input>
+            <input type="button" name="Enter" value="Enter" onClick="if(!verificar(document.f1.texto.value,1,100)){
+document.f1.texto.value='Entrada Errónea'; return true;}else {gracias()}"></input>
+    </FORM>
+</BODY>
+
+</HTML>
